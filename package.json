@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "ios": "reactive-native run-ios",
-    "android": "reactive-native run-android",
+    "ios": "react-native run-ios",
+    "android": "react-native run-android",
     "fix-ios": "cd ./node_modules/react-native && scripts/ios-install-third-party.sh && cd third-party && cd $(ls | grep 'glog' | awk '{print $1}') && ./configure",
     "test": "jest"
   },
