@@ -14,6 +14,6 @@ Navigation.registerComponent('ponto-digital.UsersList', () => withMessage(UsersL
 Navigation.startSingleScreenApp({
   screen: {
     screen: 'ponto-digital.UsersList',
-    title: 'Welcome'
+    title: 'Usuários'
   }
 });
