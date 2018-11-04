@@ -1,27 +1,17 @@
-import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { Navigation } from 'react-native-navigation';
+import { Provider } from 'react-redux';
 
 import UsersList from './src/containers/UsersList/UsersList';
 
-export default class App extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.header} />
-        <UsersList />
-      </View>
-    );
-  }
-}
+import configureStore from './src/store/configureStore';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF'
-  },
-  header: {
-    height: 50
+const store = configureStore();
+
+Navigation.registerComponent('ponto-digital.UsersList', () => UsersList, store, Provider);
+
+Navigation.startSingleScreenApp({
+  screen: {
+    screen: 'ponto-digital.UsersList',
+    title: 'Welcome'
   }
 });
