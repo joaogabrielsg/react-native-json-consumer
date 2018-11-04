@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
 
 import List from '../../components/List/List';
 import ListItem from '../../components/ListItem/ListItem';
+
+import { colors } from '../../styles';
 
 import { fetchUsersList } from '../../store/actions/userList';
 
@@ -22,7 +24,11 @@ class UsersList extends Component {
 
     return (
       <View style={styles.container}>
-        <List listItems={listItems} />
+        {this.props.loading ? (
+          <ActivityIndicator size="large" color={colors.primary} />
+        ) : (
+          <List listItems={listItems} />
+        )}
       </View>
     );
   }
@@ -39,7 +45,8 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = state => {
   return {
-    usersList: state.usersList.usersList
+    usersList: state.usersList.usersList,
+    loading: state.general.loading
   };
 };
 
