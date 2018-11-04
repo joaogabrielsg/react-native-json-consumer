@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { View, FlatList, StyleSheet } from 'react-native';
 
 const List = ({ listItems }) => (
@@ -23,5 +24,9 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   }
 });
+
+List.propTypes = {
+  listItems: PropTypes.array.isRequired
+};
 
 export default List;

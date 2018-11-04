@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Text, View, StyleSheet } from 'react-native';
 
 const ListItem = ({ data }) => (
@@ -22,5 +23,13 @@ const styles = StyleSheet.create({
     fontSize: 20
   }
 });
+
+ListItem.propTypes = {
+  data: PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+    pwd: PropTypes.string
+  }).isRequired
+};
 
 export default ListItem;
