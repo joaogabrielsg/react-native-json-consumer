@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Text, View, StyleSheet } from 'react-native';
 
+import { colors, fonts, metrics } from '../../styles';
+
 const ListItem = ({ data }) => (
   <View style={styles.container}>
     <Text style={styles.text}>id: {data.id}</Text>
@@ -12,15 +14,15 @@ const ListItem = ({ data }) => (
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#0b478e',
+    backgroundColor: colors.primary,
     width: '80%',
     padding: 20,
-    borderRadius: 15
+    borderRadius: metrics.borderRadius
   },
   text: {
     textAlign: 'center',
-    color: '#ffffff',
-    fontSize: 20
+    color: colors.messageText,
+    fontSize: fonts.default
   }
 });
 
