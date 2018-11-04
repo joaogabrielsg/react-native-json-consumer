@@ -2,10 +2,11 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
 import usersListReducer from './reducers/userList';
-// import generalReducer from './reducers/general';
+import generalReducer from './reducers/general';
 
 const rootReducer = combineReducers({
-  usersList: usersListReducer
+  usersList: usersListReducer,
+  general: generalReducer
 });
 
 const configureStore = () => {
