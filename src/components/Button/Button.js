@@ -4,7 +4,7 @@ import { StyleSheet, TouchableOpacity, View, Text, Dimensions } from 'react-nati
 
 import { colors, metrics } from '../../styles';
 
-const CustomButton = ({ title, size, onPress, loading, disable }) => {
+const CustomButton = ({ title, size, onPress, disable }) => {
   let buttonSize;
 
   switch (size) {
@@ -55,13 +55,11 @@ const styles = StyleSheet.create({
 
 CustomButton.propTypes = {
   title: PropTypes.string.isRequired,
-  color: PropTypes.string,
   size: PropTypes.string,
   disable: PropTypes.bool
 };
 
 CustomButton.defaultProps = {
-  color: 'default',
   size: 'large',
   disable: false
 };
